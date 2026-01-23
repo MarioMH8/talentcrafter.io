@@ -1,3 +1,23 @@
 {
-	"extends": "@hexadrop/tsconfig"
+	"extends": "@hexadrop/tsconfig",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"rootDirs": [
+			"."
+		],
+		"paths": {
+			"@talentcrafter/aggregate-root/mother/domain": [
+				"packages/aggregate-root/mother/domain/index.ts"
+			],
+			"@talentcrafter/aggregate-root/domain": [
+				"packages/aggregate-root/src/domain/index.ts"
+			],
+			"@talentcrafter/tenant/mother/domain": [
+				"packages/tenant/mother/domain/index.ts"
+			],
+			"@talentcrafter/tenant/domain": [
+				"packages/tenant/src/domain/index.ts"
+			]
+		}
+	}
 }

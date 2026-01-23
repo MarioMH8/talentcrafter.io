@@ -12,6 +12,25 @@
 	},
 	"private": true,
 	"type": "module",
+	"workspaces": {
+		"packages": [
+			"packages/*"
+		],
+		"catalog": {
+			"@hexadrop/aggregate-root": "2.0.2",
+			"@hexadrop/either": "2.0.1",
+			"@hexadrop/error": "2.0.0",
+			"@hexadrop/event": "2.1.0",
+			"@hexadrop/types": "2.0.0",
+			"@hexadrop/value-object": "2.0.1",
+			"ulid": "3.0.2"
+		},
+		"catalogs": {
+			"test": {
+				"@faker-js/faker": "10.2.0"
+			}
+		}
+	},
 	"scripts": {
 		"lint": "eslint .",
 		"lint:fix": "eslint --fix .",
