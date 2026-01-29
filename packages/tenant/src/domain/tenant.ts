@@ -91,7 +91,6 @@ export default class Tenant extends TalentCrafterAggregateRoot {
 	override toPrimitives(): Primitives<Tenant> {
 		return {
 			...super.toPrimitives(),
-			id: this.id.value,
 			key: this.key.value,
 			name: this.name.value,
 		};
