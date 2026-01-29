@@ -1,0 +1,28 @@
+{
+	"name": "@talentcrafter/user",
+	"version": "0.0.0",
+	"description": "Platform for human resource management and talent acquisition.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MarioMH8/talentcrafter.io.git",
+		"directory": "packages/user"
+	},
+	"homepage": "https://github.com/MarioMH8/talentcrafter.io",
+	"bugs": {
+		"url": "https://github.com/MarioMH8/talentcrafter.io/issues"
+	},
+	"type": "module",
+	"dependencies": {
+		"@hexadrop/aggregate-root": "catalog:",
+		"@hexadrop/either": "catalog:",
+		"@hexadrop/error": "catalog:",
+		"@hexadrop/event": "catalog:",
+		"@hexadrop/types": "catalog:",
+		"@hexadrop/value-object": "catalog:",
+		"@talentcrafter/aggregate-root": "workspace:",
+		"ulid": "catalog:"
+	},
+	"devDependencies": {
+		"@faker-js/faker": "catalog:test"
+	}
+}
