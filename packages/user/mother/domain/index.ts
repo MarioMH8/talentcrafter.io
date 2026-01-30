@@ -1,2 +1,4 @@
+export * from './criteria';
 export { default as UserMother } from './user.mother';
 export { default as UserEmailMother } from './user-email.mother';
+export { default as UserUsernameOrEmailMother } from './user-username-or-email.mother';
