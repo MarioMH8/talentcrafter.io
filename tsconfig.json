@@ -18,8 +18,17 @@
 			"@talentcrafter/tenant/domain": [
 				"packages/tenant/src/domain/index.ts"
 			],
+			"@talentcrafter/user/mock/infrastructure": [
+				"packages/user/mock/infrastructure/index.ts"
+			],
+			"@talentcrafter/user/mother/application": [
+				"packages/user/mother/application/index.ts"
+			],
 			"@talentcrafter/user/mother/domain": [
 				"packages/user/mother/domain/index.ts"
+			],
+			"@talentcrafter/user/application": [
+				"packages/user/src/application/index.ts"
 			],
 			"@talentcrafter/user/domain": [
 				"packages/user/src/domain/index.ts"
