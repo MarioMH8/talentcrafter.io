@@ -1,4 +1,5 @@
 import DomainEvent from '@hexadrop/event';
+import type { Nullable } from '@hexadrop/types/nullable';
 import type { Primitives } from '@hexadrop/types/primitives';
 
 import type User from '../user';
@@ -9,6 +10,7 @@ export default class UserCreatedEvent extends DomainEvent implements Primitives<
 	readonly createdBy: string;
 	readonly email: string;
 	readonly id: string;
+	readonly password?: Nullable<string>;
 	readonly updatedAt: Date;
 	readonly updatedBy: string;
 
@@ -18,6 +20,7 @@ export default class UserCreatedEvent extends DomainEvent implements Primitives<
 		});
 		this.id = user.id;
 		this.email = user.email;
+		this.password = user.password;
 		this.createdAt = user.createdAt;
 		this.createdBy = user.createdBy;
 		this.updatedAt = user.updatedAt;

@@ -12,6 +12,7 @@ describe('UserCreatedEvent', () => {
 		expect(event.aggregateId).toBe(user.id.value);
 		expect(event.id).toBe(user.id.value);
 		expect(event.email).toBe(user.email.value);
+		expect(event.password).toBe(user.password?.value);
 		expect(event.createdAt).toBe(user.createdAt.value);
 		expect(event.createdBy).toBe(user.createdBy.value);
 		expect(event.updatedAt).toBe(user.updatedAt.value);
