@@ -43,9 +43,28 @@
         "@faker-js/faker": "catalog:test",
       },
     },
+    "packages/user": {
+      "name": "@talentcrafter/user",
+      "version": "0.0.0",
+      "dependencies": {
+        "@hexadrop/aggregate-root": "catalog:",
+        "@hexadrop/command": "catalog:",
+        "@hexadrop/either": "catalog:",
+        "@hexadrop/error": "catalog:",
+        "@hexadrop/event": "catalog:",
+        "@hexadrop/types": "catalog:",
+        "@hexadrop/value-object": "catalog:",
+        "@talentcrafter/aggregate-root": "workspace:",
+        "ulid": "catalog:",
+      },
+      "devDependencies": {
+        "@faker-js/faker": "catalog:test",
+      },
+    },
   },
   "catalog": {
     "@hexadrop/aggregate-root": "2.0.2",
+    "@hexadrop/command": "2.1.0",
     "@hexadrop/either": "2.0.1",
     "@hexadrop/error": "2.0.0",
     "@hexadrop/event": "2.1.0",
@@ -167,6 +186,8 @@
 
     "@hexadrop/aggregate-root": ["@hexadrop/aggregate-root@2.0.2", "", { "dependencies": { "@hexadrop/event": "2.1.0", "@hexadrop/types": "2.0.0" } }, "sha512-6DdsShqlMRtgh8gSjUiOJl0ORDw02OqWs5eZ6VN/znCOiOegubGGUDl4aPKCEAq36Na79e701F7b0y3DMQFUDA=="],
 
+    "@hexadrop/command": ["@hexadrop/command@2.1.0", "", { "dependencies": { "@hexadrop/either": "2.0.1", "@hexadrop/error": "2.0.0", "@hexadrop/types": "2.0.0" }, "peerDependencies": { "@hexadrop/ioc": "^2.0.0", "vitest": "^1 || ^2.0.0 || ^3.0.0" }, "optionalPeers": ["@hexadrop/ioc", "vitest"] }, "sha512-4adZmCvu/MIw4hl1wVYvCz1YvQMWcmlI5wLznrB0DIFjvqXZETF4mG7U/BlGL3Fhp5aFTZFE0XYYQrU6tmEHrA=="],
+
     "@hexadrop/either": ["@hexadrop/either@2.0.1", "", {}, "sha512-zUnbrhiA7kipwSY762iaIglq6zrrqeyELGxH4QidGhd4QAhxVymxVvi9pt1z66BEI9e4o8jNi4Fp4GoGJ42HFg=="],
 
     "@hexadrop/error": ["@hexadrop/error@2.0.0", "", {}, "sha512-sKoLAivVc1JB4I31rW+ZzyxaVefyjllj5fqQRKDhWcfm1KquJ1l1XvXZ7mSNQclE4RbLccY0KkJq9Xc4DJNEYQ=="],
@@ -224,6 +245,8 @@
     "@talentcrafter/aggregate-root": ["@talentcrafter/aggregate-root@workspace:packages/aggregate-root"],
 
     "@talentcrafter/tenant": ["@talentcrafter/tenant@workspace:packages/tenant"],
+
+    "@talentcrafter/user": ["@talentcrafter/user@workspace:packages/user"],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
 
