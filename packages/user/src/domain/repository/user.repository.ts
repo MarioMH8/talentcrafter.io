@@ -4,8 +4,11 @@ import type { Awaitable } from '@hexadrop/types/awaitable';
 import type { Nullable } from '@hexadrop/types/nullable';
 
 import type { FindUserCriteria, SearchUserCriteria } from '../criteria';
+import { FindUserByEmailCriteria, FindUserByIdCriteria } from '../criteria';
 import type User from '../user';
 
+type UserRepositoryFindByIdParameters = [FindUserByIdCriteria];
+type UserRepositoryFindByEmailParameters = [FindUserByEmailCriteria];
 type UserRepositoryFindParameters = [FindUserCriteria];
 type UserRepositoryFindReturn = Either<DomainError, Nullable<User>>;
 
@@ -30,6 +33,8 @@ export { UserRepository };
 export type {
 	UserRepositoryDeleteParameters,
 	UserRepositoryDeleteReturn,
+	UserRepositoryFindByEmailParameters,
+	UserRepositoryFindByIdParameters,
 	UserRepositoryFindParameters,
 	UserRepositoryFindReturn,
 	UserRepositorySearchParameters,
