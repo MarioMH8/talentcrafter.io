@@ -37,7 +37,7 @@ export default class UserPassword extends StringValueObject {
 		if (!value) {
 			return false;
 		}
-		if (UserPassword.isSecure(value)) {
+		if (UserPassword.isEncrypted(value)) {
 			return true;
 		}
 
