@@ -1,10 +1,8 @@
 import MockEventBus from '@hexadrop/event/bus/mock/bun';
 import { UserDeleter } from '@talentcrafter/user/application';
-import { MockUserRepository } from '@talentcrafter/user/mock/infrastructure/repository';
-import { DeleteUserCommandMother } from '@talentcrafter/user/mother/application/delete';
-import { UserMother } from '@talentcrafter/user/mother/domain';
-import { FindUserByIdCriteriaMother } from '@talentcrafter/user/mother/domain/criteria';
-import { UserDeletedEventMother } from '@talentcrafter/user/mother/domain/event';
+import { MockUserRepository } from '@talentcrafter/user/mock/infrastructure';
+import { DeleteUserCommandMother } from '@talentcrafter/user/mother/application';
+import { FindUserByIdCriteriaMother, UserDeletedEventMother, UserMother } from '@talentcrafter/user/mother/domain';
 import { afterEach, beforeEach, describe, expect, setSystemTime, test } from 'bun:test';
 
 describe('UserDeleter', () => {

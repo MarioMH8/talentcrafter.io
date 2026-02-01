@@ -1,5 +1,5 @@
 import { DeleteUserCommand } from '@talentcrafter/user/application';
-import { DeleteUserCommandMother } from '@talentcrafter/user/mother/application/delete';
+import { DeleteUserCommandMother } from '@talentcrafter/user/mother/application';
 import { describe, expect, test } from 'bun:test';
 
 describe('DeleteUserCommand', () => {
