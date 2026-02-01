@@ -1,6 +1,6 @@
 import Either from '@hexadrop/either';
 import DomainError from '@hexadrop/error';
-import type { Nullable } from '@hexadrop/types/nullable';
+import type { Nullable, PartialNullable } from '@hexadrop/types/nullable';
 import type { Primitives } from '@hexadrop/types/primitives';
 import { TalentCrafterAggregateRoot } from '@talentcrafter/aggregate-root/domain';
 
@@ -9,7 +9,7 @@ import UserEmail from './user-email';
 import UserPassword from './user-password';
 
 type UserCreateParameters = Partial<Pick<Primitives<User>, 'password'>> & Pick<Primitives<User>, 'email' | 'id'>;
-type UserUpdateParameters = Partial<Pick<Primitives<User>, 'email'>>;
+type UserUpdateParameters = PartialNullable<Pick<Primitives<User>, 'email'>>;
 
 export default class User extends TalentCrafterAggregateRoot {
 	readonly email: UserEmail;
