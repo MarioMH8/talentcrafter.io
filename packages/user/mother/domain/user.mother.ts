@@ -4,12 +4,14 @@ import { TalentCrafterAggregateRootMother } from '@talentcrafter/aggregate-root/
 import { User } from '@talentcrafter/user/domain';
 
 import UserEmailMother from './user-email.mother';
+import UserPasswordMother from './user-password.mother';
 
 export default class UserMother {
-	static create({ email, ...rest }: PartialNullable<Primitives<User>> = {}): User {
+	static create({ email, password, ...rest }: PartialNullable<Primitives<User>> = {}): User {
 		return new User({
 			...TalentCrafterAggregateRootMother.create(rest),
 			email: email ?? UserEmailMother.random().value,
+			password: password ?? UserPasswordMother.random().value,
 		});
 	}
 

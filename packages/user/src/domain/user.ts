@@ -1,21 +1,25 @@
 import Either from '@hexadrop/either';
 import DomainError from '@hexadrop/error';
+import type { Nullable } from '@hexadrop/types/nullable';
 import type { Primitives } from '@hexadrop/types/primitives';
 import { TalentCrafterAggregateRoot } from '@talentcrafter/aggregate-root/domain';
 
-import { UserCreatedEvent, UserDeletedEvent, UserUpdatedEvent } from './event';
+import { UserCreatedEvent, UserDeletedEvent, UserPasswordUpdatedEvent, UserUpdatedEvent } from './event';
 import UserEmail from './user-email';
+import UserPassword from './user-password';
 
-type UserCreateParameters = Pick<Primitives<User>, 'email' | 'id'>;
+type UserCreateParameters = Partial<Pick<Primitives<User>, 'password'>> & Pick<Primitives<User>, 'email' | 'id'>;
 type UserUpdateParameters = Partial<Pick<Primitives<User>, 'email'>>;
 
 export default class User extends TalentCrafterAggregateRoot {
 	readonly email: UserEmail;
+	readonly password?: Nullable<UserPassword>;
 
 	constructor(primitives: Primitives<User>) {
 		super(primitives);
-		const { email } = primitives;
+		const { email, password } = primitives;
 		this.email = new UserEmail(email);
+		this.password = password ? new UserPassword(password) : undefined;
 	}
 
 	static create(user: UserCreateParameters, creator: string): Either<DomainError, User> {
@@ -26,6 +30,7 @@ export default class User extends TalentCrafterAggregateRoot {
 				createdBy: creator,
 				deletedAt: undefined,
 				deletedBy: undefined,
+				password: user.password,
 				updatedAt: new Date(),
 				updatedBy: creator,
 			});
@@ -84,10 +89,34 @@ export default class User extends TalentCrafterAggregateRoot {
 		}
 	}
 
+	static updatePassword(user: User, password: string, updater: string): Either<DomainError, User> {
+		try {
+			const updated = new User({
+				...user.toPrimitives(),
+				createdAt: user.createdAt.value,
+				createdBy: user.createdBy.value,
+				deletedAt: undefined,
+				deletedBy: undefined,
+				password,
+				updatedAt: new Date(),
+				updatedBy: updater,
+			});
+			updated.record(UserPasswordUpdatedEvent.fromDomain(updated));
+
+			return Either.right(updated);
+		} catch (error) {
+			if (error instanceof DomainError) {
+				return Either.left(error);
+			}
+			throw error;
+		}
+	}
+
 	override toPrimitives(): Primitives<User> {
 		return {
 			...super.toPrimitives(),
 			email: this.email.value,
+			password: this.password?.value,
 		};
 	}
 }
