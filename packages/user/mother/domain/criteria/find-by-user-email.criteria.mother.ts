@@ -1,4 +1,5 @@
 import { FindUserByEmailCriteria } from '@talentcrafter/user/domain';
+
 import UserUsernameOrEmailMother from '../user-username-or-email.mother';
 
 export default class FindUserByEmailCriteriaMother {

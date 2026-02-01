@@ -1,2 +1,2 @@
-export { default as MockUserRepository } from './repository';
-export { default as MockUserPasswordService } from './service';
+export * from './repository';
+export * from './service';

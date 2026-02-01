@@ -11,15 +11,17 @@ import TalentCrafterUpdatedByMother from './talent-crafter-updated-by.mother';
 export default class TalentCrafterAggregateRootMother {
 	static create({
 		createdAt,
+		createdBy,
 		id,
 		updatedAt,
+		updatedBy,
 	}: PartialNullable<Primitives<TalentCrafterAggregateRoot>> = {}): Primitives<TalentCrafterAggregateRoot> {
 		return {
 			createdAt: createdAt ?? TalentCrafterCreatedAtMother.random().value,
-			createdBy: TalentCrafterCreatedByMother.random().value,
+			createdBy: createdBy ?? TalentCrafterCreatedByMother.random().value,
 			id: id ?? TalentCrafterIdMother.random().value,
 			updatedAt: updatedAt ?? TalentCrafterUpdatedAtMother.random().value,
-			updatedBy: TalentCrafterUpdatedByMother.random().value,
+			updatedBy: updatedBy ?? TalentCrafterUpdatedByMother.random().value,
 		};
 	}
 

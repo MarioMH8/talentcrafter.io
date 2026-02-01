@@ -1,7 +1,8 @@
 import type { PartialNullable } from '@hexadrop/types/nullable';
 import type { Primitives } from '@hexadrop/types/primitives';
 import { User, UserUpdatedEvent } from '@talentcrafter/user/domain';
-import { UserMother } from '@talentcrafter/user/mother/domain';
+
+import UserMother from '../user.mother';
 
 interface PartialUser extends PartialNullable<Primitives<User>> {
 	id: string;

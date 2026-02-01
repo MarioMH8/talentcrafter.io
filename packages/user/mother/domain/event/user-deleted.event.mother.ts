@@ -3,7 +3,8 @@ import {
 	TalentCrafterDeletedByMother,
 } from '@talentcrafter/aggregate-root/mother/domain';
 import { UserDeletedEvent } from '@talentcrafter/user/domain';
-import { UserMother } from '@talentcrafter/user/mother/domain';
+
+import UserMother from '../user.mother';
 
 interface PartialUser {
 	deletedAt: Date;

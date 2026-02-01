@@ -1,6 +1,7 @@
 import type { Primitives } from '@hexadrop/types/primitives';
 import { User, UserCreatedEvent } from '@talentcrafter/user/domain';
-import { UserMother } from '@talentcrafter/user/mother/domain';
+
+import UserMother from '../user.mother';
 
 export default class UserCreatedEventMother {
 	static create(user: Primitives<User>): UserCreatedEvent {

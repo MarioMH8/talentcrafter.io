@@ -1,5 +1,6 @@
 import { UserPasswordUpdatedEvent } from '@talentcrafter/user/domain';
-import { UserMother } from '@talentcrafter/user/mother/domain';
+
+import UserMother from '../user.mother';
 
 interface PartialUser {
 	id: string;
