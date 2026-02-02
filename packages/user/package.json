@@ -21,6 +21,7 @@
 		"@hexadrop/types": "catalog:",
 		"@hexadrop/value-object": "catalog:",
 		"@talentcrafter/aggregate-root": "workspace:",
+		"typeorm": "catalog:",
 		"ulid": "catalog:"
 	},
 	"devDependencies": {

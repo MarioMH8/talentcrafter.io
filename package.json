@@ -24,6 +24,7 @@
 			"@hexadrop/event": "2.1.0",
 			"@hexadrop/types": "2.0.0",
 			"@hexadrop/value-object": "2.0.1",
+			"typeorm": "0.3.28",
 			"ulid": "3.0.2"
 		},
 		"catalogs": {
