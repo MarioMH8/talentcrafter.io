@@ -32,6 +32,9 @@
 			],
 			"@talentcrafter/user/domain": [
 				"packages/user/src/domain/index.ts"
+			],
+			"@talentcrafter/user/infrastructure": [
+				"packages/user/src/infrastructure/index.ts"
 			]
 		}
 	}
