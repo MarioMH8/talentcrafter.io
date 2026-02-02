@@ -1,5 +1,5 @@
 import { FindUserByEmailCriteria } from '@talentcrafter/user/domain';
-import { FindUserByEmailCriteriaMother, UserUsernameOrEmailMother } from '@talentcrafter/user/mother/domain';
+import { FindUserByEmailCriteriaMother, UserTermMother } from '@talentcrafter/user/mother/domain';
 import { describe, expect, test } from 'bun:test';
 
 describe('FindUserByEmailCriteria', () => {
@@ -9,7 +9,7 @@ describe('FindUserByEmailCriteria', () => {
 	});
 
 	test('should create a FindUserByEmailCriteria with a specific email', () => {
-		const email = UserUsernameOrEmailMother.create('test@test.com').value;
+		const email = UserTermMother.create('test@test.com').value;
 		const criteria = FindUserByEmailCriteriaMother.create(email);
 		expect(criteria.email.value).toBe(email);
 	});
