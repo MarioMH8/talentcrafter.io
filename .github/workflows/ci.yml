@@ -16,7 +16,7 @@ jobs:
             id-token: 'write'
         strategy:
             matrix:
-                command: [ "lint:ci", typecheck, test ]
+                command: [ '--bun lint:ci', typecheck, test ]
         env:
             HUSKY: 0
         steps:
@@ -33,3 +33,10 @@ jobs:
 
             -   name: ${{ matrix.command }}
                 run: bun run ${{ matrix.command }}
+
+            -   name: ESLint cache
+                uses: actions/cache@v4
+                if: matrix.command == '--bun lint:ci'
+                with:
+                    path: .eslintcache
+                    key: ${{ runner.os }}-node
