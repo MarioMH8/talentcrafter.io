@@ -16,7 +16,9 @@ jobs:
             id-token: 'write'
         strategy:
             matrix:
-                command: [ lint, typecheck, test ]
+                command: [ "lint:ci", typecheck, test ]
+        env:
+            HUSKY: 0
         steps:
             -   name: Checkout
                 uses: actions/checkout@v5
