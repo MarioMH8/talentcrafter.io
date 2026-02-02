@@ -3,7 +3,7 @@
  * @type {import('lint-staged').Configuration}
  */
 const config = {
-	'*': 'lint:fix',
+	'*': 'bun run lint:fix',
 	'*.test.ts': 'bun test',
 };
 
