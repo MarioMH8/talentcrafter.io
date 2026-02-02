@@ -33,8 +33,9 @@
 		}
 	},
 	"scripts": {
-		"lint": "eslint .",
-		"lint:fix": "eslint --fix .",
+		"lint": "eslint --cache .",
+		"lint:ci": "eslint --cache --cache-strategy content .",
+		"lint:fix": "eslint --cache --fix .",
 		"test": "bun test",
 		"typecheck": "tsc --noEmit"
 	},
