@@ -1,11 +1,11 @@
 import { FindUserByEmailCriteria } from '@talentcrafter/user/domain';
 
-import UserUsernameOrEmailMother from '../user-username-or-email.mother';
+import UserTermMother from '../user-term.mother';
 
 export default class FindUserByEmailCriteriaMother {
 	static create(email?: string): FindUserByEmailCriteria {
 		return new FindUserByEmailCriteria({
-			email: email ?? UserUsernameOrEmailMother.random().value,
+			email: email ?? UserTermMother.random().value,
 		});
 	}
 

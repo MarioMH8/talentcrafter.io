@@ -1,11 +1,11 @@
 import type { Primitives } from '@hexadrop/types/primitives';
 
-import UserUsernameOrEmail from '../user-username-or-email';
+import UserTerm from '../user-term';
 
 export default class FindUserByEmailCriteria {
-	readonly email: UserUsernameOrEmail;
+	readonly email: UserTerm;
 	constructor(primitives: Primitives<FindUserByEmailCriteria>) {
 		const { email } = primitives;
-		this.email = new UserUsernameOrEmail(email);
+		this.email = new UserTerm(email);
 	}
 }
