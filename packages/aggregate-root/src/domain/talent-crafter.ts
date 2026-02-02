@@ -31,10 +31,26 @@ export default abstract class TalentCrafterAggregateRoot extends AggregateRoot {
 		this.deletedBy = primitives.deletedBy ? new TalentCrafterDeletedBy(primitives.deletedBy) : undefined;
 	}
 
+	/* eslint-disable unicorn/no-null */
+	public toNullPrimitives(): Primitives<TalentCrafterAggregateRoot> {
+		return {
+			createdAt: this.createdAt.value,
+			createdBy: this.createdBy.value,
+			deletedAt: this.deletedAt?.value ?? null,
+			deletedBy: this.deletedBy?.value ?? null,
+			id: this.fid.value,
+			updatedAt: this.updatedAt.value,
+			updatedBy: this.updatedBy.value,
+		};
+	}
+	/* eslint-enable unicorn/no-null */
+
 	public toPrimitives(): Primitives<TalentCrafterAggregateRoot> {
 		return {
 			createdAt: this.createdAt.value,
 			createdBy: this.createdBy.value,
+			deletedAt: this.deletedAt?.value,
+			deletedBy: this.deletedBy?.value,
 			id: this.id.value,
 			updatedAt: this.updatedAt.value,
 			updatedBy: this.updatedBy.value,
