@@ -112,6 +112,16 @@ export default class User extends TalentCrafterAggregateRoot {
 		}
 	}
 
+	/* eslint-disable unicorn/no-null */
+	override toNullPrimitives(): Primitives<User> {
+		return {
+			...super.toNullPrimitives(),
+			email: this.email.value,
+			password: this.password?.value ?? null,
+		};
+	}
+	/* eslint-enable unicorn/no-null */
+
 	override toPrimitives(): Primitives<User> {
 		return {
 			...super.toPrimitives(),
