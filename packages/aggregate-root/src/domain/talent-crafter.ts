@@ -38,7 +38,7 @@ export default abstract class TalentCrafterAggregateRoot extends AggregateRoot {
 			createdBy: this.createdBy.value,
 			deletedAt: this.deletedAt?.value ?? null,
 			deletedBy: this.deletedBy?.value ?? null,
-			id: this.fid.value,
+			id: this.id.value,
 			updatedAt: this.updatedAt.value,
 			updatedBy: this.updatedBy.value,
 		};
