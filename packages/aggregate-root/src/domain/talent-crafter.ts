@@ -21,14 +21,14 @@ export default abstract class TalentCrafterAggregateRoot extends AggregateRoot {
 
 	protected constructor(primitives: Primitives<TalentCrafterAggregateRoot>) {
 		super();
-		const { createdAt, createdBy, id, updatedAt, updatedBy } = primitives;
+		const { createdAt, createdBy, deletedAt, deletedBy, id, updatedAt, updatedBy } = primitives;
 		this.id = new TalentCrafterId(id);
 		this.createdAt = new TalentCrafterCreatedAt(createdAt);
 		this.updatedAt = new TalentCrafterUpdatedAt(updatedAt);
 		this.createdBy = new TalentCrafterCreatedBy(createdBy);
 		this.updatedBy = new TalentCrafterUpdatedBy(updatedBy);
-		this.deletedAt = primitives.deletedAt ? new TalentCrafterDeletedAt(primitives.deletedAt) : undefined;
-		this.deletedBy = primitives.deletedBy ? new TalentCrafterDeletedBy(primitives.deletedBy) : undefined;
+		this.deletedAt = deletedAt ? new TalentCrafterDeletedAt(deletedAt) : undefined;
+		this.deletedBy = deletedBy ? new TalentCrafterDeletedBy(deletedBy) : undefined;
 	}
 
 	/* eslint-disable unicorn/no-null */

@@ -12,6 +12,8 @@ export default class TalentCrafterAggregateRootMother {
 	static create({
 		createdAt,
 		createdBy,
+		deletedAt,
+		deletedBy,
 		id,
 		updatedAt,
 		updatedBy,
@@ -19,6 +21,8 @@ export default class TalentCrafterAggregateRootMother {
 		return {
 			createdAt: createdAt ?? TalentCrafterCreatedAtMother.random().value,
 			createdBy: createdBy ?? TalentCrafterCreatedByMother.random().value,
+			deletedAt,
+			deletedBy,
 			id: id ?? TalentCrafterIdMother.random().value,
 			updatedAt: updatedAt ?? TalentCrafterUpdatedAtMother.random().value,
 			updatedBy: updatedBy ?? TalentCrafterUpdatedByMother.random().value,
