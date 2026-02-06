@@ -1,0 +1,13 @@
+.git
+.changeset
+.github
+.husky
+.idea
+node_modules
+.eslintcache
+.gitignore
+Dockerfile*
+README.md
+eslint.config.js
+lint-staged.config.js
+renovate.json
