@@ -1,0 +1,29 @@
+{
+	"name": "@talentcrafter/user-api",
+	"version": "0.0.0",
+	"description": "Platform for human resource management and talent acquisition.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MarioMH8/talentcrafter.io.git",
+		"directory": "api/user"
+	},
+	"homepage": "https://github.com/MarioMH8/talentcrafter.io",
+	"bugs": {
+		"url": "https://github.com/MarioMH8/talentcrafter.io/issues"
+	},
+	"type": "module",
+	"scripts": {
+		"dev": "bun run --watch ./src/index.ts",
+		"start": "bun run ./src/index.ts"
+	},
+	"dependencies": {
+		"@hono/swagger-ui": "catalog:api",
+		"@hono/zod-openapi": "catalog:api",
+		"@scalar/hono-api-reference": "catalog:api",
+		"@scalar/openapi-to-markdown": "catalog:api",
+		"@talentcrafter/user": "workspace:",
+		"hono": "catalog:api",
+		"inversify": "catalog:api",
+		"zod": "catalog:api"
+	}
+}

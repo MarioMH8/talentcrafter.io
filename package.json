@@ -14,6 +14,7 @@
 	"type": "module",
 	"workspaces": {
 		"packages": [
+			"api/*",
 			"packages/*"
 		],
 		"catalog": {
@@ -28,6 +29,15 @@
 			"ulid": "3.0.2"
 		},
 		"catalogs": {
+			"api": {
+				"@hono/zod-openapi": "1.2.1",
+				"@hono/swagger-ui": "0.5.3",
+				"@scalar/hono-api-reference": "0.9.40",
+				"@scalar/openapi-to-markdown": "0.3.36",
+				"hono": "4.11.7",
+				"inversify": "7.11.0",
+				"zod": "4.3.6"
+			},
 			"test": {
 				"@faker-js/faker": "10.2.0"
 			}
@@ -46,6 +56,7 @@
 		"@hexadrop/eslint-config": "0.1.15",
 		"@hexadrop/tsconfig": "0.0.5",
 		"@types/bun": "1.3.6",
+		"ajv": "8.17.1",
 		"eslint": "9.39.2",
 		"husky": "9.1.7",
 		"lint-staged": "^16.2.7",
